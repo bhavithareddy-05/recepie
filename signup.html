@@ -1,0 +1,106 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+     crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+ crossorigin="anonymous"></script>
+    <style>
+          *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+        body{
+            background: linear-gradient(rgba(0,0,0,0.7),rgba(0, 0, 0,0.7)),url('B1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+  background-size: cover;
+        }
+        .container1{
+            max-width:500px;
+    width:100%;
+    background:#fff;
+    padding: 25px 25px;
+    border-radius: 5px;
+    margin-left: 500px;
+    margin-top: 70px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-around;
+        }
+        .container2{
+
+display:flex;
+flex-wrap:wrap;
+justify-content: space-around;
+
+}
+
+.index{
+text-align:center;
+   
+}
+    </style>
+<script>
+function display() 
+{
+    var email =document.getElementById("e").value;
+    var mob=document.getElementById("m").value;
+    var pwd=document.getElementById("p").value;
+    var pwd=document.getElementById("cp").value;
+    var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var regmob=/^[7-9][0-9]{9}$/;
+    if((email == "" || !regEmail.test(email))&&(mob==""|| !regmob.test(mob))&&(pwd=="")) {
+        window.alert("Please fill all the boxes.");
+    email.focus();
+    mob.focus();
+    return false;
+    }
+    if (email == "" || !regEmail.test(email))
+    {
+    window.alert("Please enter a valid e-mail address.");
+    email.focus();
+    return false;
+    }
+    if (mob==""|| !regmob.test(mob)){
+        window.alert("Please enter a valid mobile number.");
+    mob.focus();
+    return false;  
+    }   
+    if(pwd==""){
+        window.alert("please enter your password.");
+        pwd.focus();
+        return false;
+    }
+    if(cpwd==""||cpwd!=""){
+        window.alert("please enter your password.");
+        pwd.focus();
+        return false;
+    }
+}
+</script>
+</head>
+<body>
+    <div class="container1">
+        <div class="index"><h3>Sign-Up</h3></div><br><br>
+        <div class="container2">
+            <form name="RegForm" onsubmit="return display()"action="process.php" method="post" class="was-validated">
+               
+                
+                Mobile:<br><input type="text" name="mob" id="m" placeholder="enter mobile number"><br>
+                E-mail Address: <input type="text" size="40" name="EMail" id="e" placeholder="enter email"><br>
+                Password:<input type="password" size="40" name="pwd" id="p" placeholder="enter password"><br>
+                Confirm Password:<input type="password" size="40" name="cpwd" id="cp" placeholder="enter password"><br><br>
+                <button><a href="hompepage2.html" style="text-decoration: none;color: black;">Submit</a></button>
+                <input type="reset"value="Reset" name="Reset"/>
+                </form>
+        </div>
+</div>
+</body>
+</html>
+    

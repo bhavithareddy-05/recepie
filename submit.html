@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>submit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet"
+     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+     crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+ crossorigin="anonymous"></script>
+   <style>
+*{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+        body{
+            background:url('B1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+  background-size: cover;
+        }
+        .container1{
+    
+    padding: 25px 25px;
+    border-radius: 5px;
+    margin-left: 200px;
+    margin-top: 70px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-around;
+        }
+        .container2{
+
+display:flex;
+flex-wrap:wrap;
+justify-content: space-around;
+
+}
+p{
+  color: black;
+}
+
+
+    </style>
+
+</head> 
+  
+    <script>
+      function display() 
+      {
+          var recepie1=document.getElementById("rn").value;
+          var recepie2=document.getElementById("comment").value;
+          var regrn=/^[\s\S]*$/
+          if (recepie1== ""||!regrn.test(recepie1))
+          {
+          window.alert("please enter the recipe name");
+          email.focus();
+          return false;
+          }
+          if (recepie2==""|| !regrn.test(recepie2)){
+              window.alert("Please enter the recipe description.");
+          mob.focus();
+          return false;  
+          }   
+      }
+      </script>
+      </head>
+      <body>
+        <div class="container">
+          <p><h5>U have successfully Logged-In</h5>
+    Submit Your Recepie Here</p>
+  </div>
+        
+          <div class="container1">
+              <div class="container2">
+                  <form name="RegForm" onsubmit="return display()"action="process2.php" method="post" class="was-validated">
+                      Recipe Name<br><input type="text" name="name" id="rn" placeholder="enter your recipe name"><br>
+                     <label for="comment">Recipe Description</label><br>
+                     <input type="text" id="comment"name="comment" size="50"><br>
+                      </form>
+              </div>
+      </div>
+</body>
+</html>
+
